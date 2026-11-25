@@ -1,17 +1,11 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>StudyBlog</title>
-</head>
-<body>
-	<header>
-		<h1>StudyBlog</h1>
-	</header>
+<%- include('partials/header') %>
 
-	<main>
-        <h1>Hello it is running</h1>
-	</main>
-</body>
-</html>
+<h2>Secure Application Programming</h2>
+
+<% if (user) { %>
+  <p>Welcome back, <%= user.username %>.</p>
+<% } else { %>
+  <p>Please <a href="/login">log in</a> to comment on posts.</p>
+<% } %>
+
+<%- include('partials/footer') %>
